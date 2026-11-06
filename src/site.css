@@ -1,9 +1,44 @@
-/**
- * Site-wide styling for Try the Look Runway Storefront
- * Conforms strictly to designskill.md:
- * Monochromatic palette (#151413, #66625c, #c8c8c8, #ffffff)
- * 0px radius buttons, tabular numbers, architectural hairline borders.
- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Site-wide styling for Zircon Storefront */
+
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #151413;
+}
+
+.site-header .brand__logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.site-header .brand__name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #151413;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand__logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
 
 /* View Routing Containers */
 .page-view {
