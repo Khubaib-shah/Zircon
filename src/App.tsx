@@ -45,14 +45,21 @@ export const App: React.FC = () => {
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-white selection:text-black">
       {/* Toast Notification */}
       {notifyMessage && (
-        <div className="fixed top-5 right-5 z-50 flex items-center gap-3 bg-white text-black px-4 py-3 rounded-lg shadow-2xl border border-white/20 animate-fade-in font-mono text-xs uppercase tracking-wider">
-          <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-          <span>{notifyMessage}</span>
+        <div
+          id="bag-status"
+          className="is-on flex items-center gap-2.5 font-sans"
+          role="status"
+          aria-live="polite"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0 animate-pulse" />
+          <span className="tracking-wide text-xs select-none">{notifyMessage}</span>
           <button
+            type="button"
             onClick={() => showNotification('')}
-            className="ml-2 text-black/40 hover:text-black"
+            className="toast-close-btn ml-2.5 flex items-center justify-center rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+            aria-label="Dismiss notification"
           >
-            <X className="w-3.5 h-3.5" />
+            <X className="w-3.5 h-3.5 stroke-[2]" />
           </button>
         </div>
       )}

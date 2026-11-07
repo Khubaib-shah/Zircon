@@ -360,43 +360,61 @@ dialog#bag-dialog.is-closing::backdrop {
 .bag-stepper {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--rw-c-line, #c8c8c8);
+  border: 1px solid #dcdcdc;
   background: #ffffff;
-  border-radius: var(--rw-btn-radius, 0px);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 28px;
 }
 
 .bag-stepper__btn {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
   background: transparent;
   border: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  color: var(--rw-c-text, #151413);
+  font-size: 14px;
+  line-height: 1;
+  color: #151413;
   cursor: pointer;
-  transition: background-color 0.12s ease, color 0.12s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.bag-stepper__btn svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .bag-stepper__btn:hover:not(:disabled) {
-  background: var(--rw-c-text, #151413);
+  background: #151413;
   color: #ffffff;
 }
 
 .bag-stepper__btn:disabled {
-  opacity: 0.3;
+  opacity: 0.25;
   cursor: not-allowed;
+  background: transparent;
+  color: #151413;
 }
 
 .bag-stepper__qty {
-  min-width: 24px;
-  font-size: 11px;
+  min-width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   font-variant-numeric: tabular-nums;
-  color: var(--rw-c-text, #151413);
-  padding: 0 2px;
+  color: #151413;
+  padding: 0 4px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
 }
 
 /* Footer Section */
@@ -531,27 +549,49 @@ dialog#bag-dialog.is-closing::backdrop {
 /* Toast Notifications */
 #bag-status {
   position: fixed;
-  bottom: 28px;
+  bottom: 32px;
   left: 50%;
   transform: translateX(-50%) translateY(12px);
   background: #151413;
   color: #ffffff;
-  padding: 12px 22px;
-  font-size: 12px;
+  padding: 13px 22px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  border-radius: var(--rw-btn-radius, 0px);
-  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.35);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.45);
   z-index: 2147483002;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s var(--rw-ease, cubic-bezier(0.16, 1, 0.3, 1)),
-              transform 0.25s var(--rw-ease, cubic-bezier(0.16, 1, 0.3, 1));
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #bag-status.is-on {
   opacity: 1;
+  pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+}
+
+.toast-close-btn {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 4px !important;
+  margin: 0 !important;
+  width: 22px !important;
+  height: 22px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  outline: none !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.toast-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
 }
 
 /* Mobile Responsiveness */
